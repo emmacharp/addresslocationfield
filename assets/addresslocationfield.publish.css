@@ -5,14 +5,34 @@ div.field-addresslocation p {
 
 div.field-addresslocation label {
 	box-sizing: border-box;
-	margin: 0 0 3rem;
-	padding-right: 3rem;
+	margin-top: 1rem;
+	padding-right: 1.5rem;
 	width: 50%;
 }
 
-@media (max-width: 767px) {
+.secondary.column div.field-addresslocation div.main-wrapper {
+	flex-direction: column;
+}
+
+.secondary.column div.field-addresslocation label {
+	padding-right: 3rem;
+}
+
+.secondary.column div.field-addresslocation div.map {
+	height: 200px;
+}
+
+@media (max-width: 1023px) {
 	div.field-addresslocation label {
 		width: 100%;
+	}
+
+	div.field-addresslocation div.main-wrapper {
+		flex-direction: column;
+	}
+
+	div.field-addresslocation div.map {
+		height: 200px;
 	}
 }
 
@@ -34,7 +54,7 @@ div.field-addresslocation div.locate {
 	flex-direction: row;
 	align-items: flex-start;
 	justify-content: flex-start;
-	margin: 0 0 2em;
+	margin: 2em 0;
 	width: 100%;
 }
 
@@ -68,10 +88,11 @@ div.field-addresslocation div.locate input:disabled {
 
 div.field-addresslocation div.main-wrapper {
 	border-radius: 5px;
-	-webkit-border-radius: 5px;
 	margin: 0 0 3rem;
 	padding: 1.5rem;
-	border: 1px solid #d3dce2;
+	border: 2px solid var(--color-main-lightest);
+	display: flex;
+	align-items: stretch;
 }
 
 div.field-addresslocation div.address {
@@ -85,7 +106,8 @@ div.field-addresslocation div.address {
 
 div.field-addresslocation div.map {
 	width: 100%;
-	height: 200px;
+	border-radius: 5px;
+	overflow: hidden;
 }
 
 div.field-addresslocation div.gm-style-cc {

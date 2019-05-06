@@ -61,25 +61,6 @@
 
 		});
 
-		if(field.find('div.address').hasClass('sidebar')){
-
-			var a = $('<a class="mapswitch" href="#">[-] Hide Map</a>').appendTo('div.locate')
-
-			field.delegate('div.locate a.mapswitch', 'click', function(ev){
-				ev.preventDefault();
-				var map = field.find('div.map');
-				if(map.hasClass('open')){
-					map.slideUp().removeClass('open').addClass('closed');
-					$(this).text('[+] Show Map');
-				}
-				else if(map.hasClass('closed')){
-					map.slideDown().removeClass('closed').addClass('open');
-					$(this).text('[+] Hide Map');
-				}
-			});
-		}
-
-
 		field.find('div.locate input[name="locate"]').click(function(ev){
 
 			//Reassign field to stop mime warning/error
