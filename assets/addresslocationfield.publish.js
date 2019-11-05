@@ -31,8 +31,8 @@
 		});
 
 		field = $('div.field-addresslocation');
-		lat = field.find('label.latitude input');
-		lng = field.find('label.longitude input');
+		lat = field.find('input.latitude');
+		lng = field.find('input.longitude');
 
 		if(lat.val() && lng.val()){
 			var latlng = new google.maps.LatLng(lat.val(), lng.val());
@@ -49,7 +49,7 @@
 
 			ev.preventDefault();
 
-			var fields = field.find('label.street input, label.city input, label.region input, label.postal-code input, label.country input, label.latitude input, label.longitude input');
+			var fields = field.find('input.street, input.city, input.region, input.postal-code, input.country, input.latitude, input.longitude');
 
 			fields.val('');
 
@@ -73,11 +73,11 @@
 
 			ev.preventDefault();
 
-			var street = field.find('label.street input').val(),
-				city = field.find('label.city input').val(),
-				region = field.find('label.region input').val(),
-				postalcode = field.find('label.postal-code input').val(),
-				country = field.find('label.country input').val();
+			var street = field.find('input.street').val(),
+				city = field.find('input.city').val(),
+				region = field.find('input.region').val(),
+				postalcode = field.find('input.postal input').val(),
+				country = field.find('input.country').val();
 
 			var address = '';
 			if(street) address += street;
@@ -115,8 +115,8 @@
 
 	function SetLatLng(latlng){
 		field = $('div.field-addresslocation');
-		lat = field.find('label.latitude input');
-		lng = field.find('label.longitude input');
+		lat = field.find('input.latitude');
+		lng = field.find('input.longitude');
 		lat.val(latlng.lat().toFixed(7));
 		lng.val(latlng.lng().toFixed(7));
 	}

@@ -186,50 +186,54 @@
 			$coordinates = ($data['latitude'] && $data['longitude']) ? array($data['latitude'], $data['longitude']) : explode(',',$this->get('default_location_coords'));
 			$class = $this->get('location');
 
-			$label = new XMLElement('p', $this->get('label'));
-			$label->setAttribute('class', 'title');
-			$wrapper->appendChild($label);
-			$wrapinner = new XMLElement('div', null, array('class' => 'main-wrapper'));
+			$legend = new XMLElement('legend', $this->get('label'));
 
 			// Address Fields
 			$address = new XMLElement('div');
 			$address->setAttribute('class', 'address '.$class);
-			$wrapinner->appendChild($address);
+			$address->appendChild($legend);
 
 			$label = Widget::Label($this->get('street_label'));
-			$label->setAttribute('class', 'street');
-			$label->appendChild(Widget::Input('fields'.$fieldnamePrefix.'['.$this->get('element_name').'][street]'.$fieldnamePostfix, $data['street']));
+			$input = Widget::Input('fields'.$fieldnamePrefix.'['.$this->get('element_name').'][street]'.$fieldnamePostfix, $data['street']);
+			$input->setAttribute('class', 'street');
 			$address->appendChild($label);
+			$address->appendChild($input);
 
 			$label = Widget::Label($this->get('city_label'));
-			$label->setAttribute('class', 'city');
-			$label->appendChild(Widget::Input('fields'.$fieldnamePrefix.'['.$this->get('element_name').'][city]'.$fieldnamePostfix, $data['city']));
+			$input = Widget::Input('fields'.$fieldnamePrefix.'['.$this->get('element_name').'][city]'.$fieldnamePostfix, $data['city']);
+			$input->setAttribute('class', 'city');
 			$address->appendChild($label);
+			$address->appendChild($input);
 
 			$label = Widget::Label($this->get('region_label'));
-			$label->setAttribute('class', 'region');
-			$label->appendChild(Widget::Input('fields'.$fieldnamePrefix.'['.$this->get('element_name').'][region]'.$fieldnamePostfix, $data['region']));
+			$input = Widget::Input('fields'.$fieldnamePrefix.'['.$this->get('element_name').'][region]'.$fieldnamePostfix, $data['region']);
+			$input->setAttribute('class', 'region');
 			$address->appendChild($label);
+			$address->appendChild($input);
 
 			$label = Widget::Label($this->get('postal_code_label'));
-			$label->setAttribute('class', 'postal-code');
-			$label->appendChild(Widget::Input('fields'.$fieldnamePrefix.'['.$this->get('element_name').'][postal_code]'.$fieldnamePostfix, $data['postal_code']));
+			$input = Widget::Input('fields'.$fieldnamePrefix.'['.$this->get('element_name').'][postal_code]'.$fieldnamePostfix, $data['postal_code']);
+			$input->setAttribute('class', 'postal-code');
 			$address->appendChild($label);
+			$address->appendChild($input);
 
 			$label = Widget::Label($this->get('country_label'));
-			$label->setAttribute('class', 'country');
-			$label->appendChild(Widget::Input('fields'.$fieldnamePrefix.'['.$this->get('element_name').'][country]'.$fieldnamePostfix, $data['country']));
+			$input = Widget::Input('fields'.$fieldnamePrefix.'['.$this->get('element_name').'][country]'.$fieldnamePostfix, $data['country']);
+			$input->setAttribute('class', 'country');
 			$address->appendChild($label);
+			$address->appendChild($input);
 
 			$label = Widget::Label('Latitude');
-			$label->setAttribute('class', 'latitude');
-			$label->appendChild(Widget::Input('fields'.$fieldnamePrefix.'['.$this->get('element_name').'][latitude]'.$fieldnamePostfix, $coordinates[0], 'text', array('readonly' => 'readonly')));
+			$input = Widget::Input('fields'.$fieldnamePrefix.'['.$this->get('element_name').'][latitude]'.$fieldnamePostfix, $coordinates[0], 'text', array('readonly' => 'readonly'));
+			$input->setAttribute('class', 'latitude');
 			$address->appendChild($label);
+			$address->appendChild($input);
 
 			$label = Widget::Label('Longitude');
-			$label->setAttribute('class', 'longitude');
-			$label->appendChild(Widget::Input('fields'.$fieldnamePrefix.'['.$this->get('element_name').'][longitude]'.$fieldnamePostfix, $coordinates[1], 'text', array('readonly' => 'readonly')));
+			$input = Widget::Input('fields'.$fieldnamePrefix.'['.$this->get('element_name').'][longitude]'.$fieldnamePostfix, $coordinates[1], 'text', array('readonly' => 'readonly'));
+			$input->setAttribute('class', 'longitude');
 			$address->appendChild($label);
+			$address->appendChild($input);
 
 			$div = new XMLElement('div');
 			$div->setAttribute('class', 'locate');
@@ -239,9 +243,9 @@
 
 			$map = new XMLElement('div');
 			$map->setAttribute('class', 'map '.$class.' open');
-			$wrapinner->appendChild($map);
 
-			$wrapper->appendChild($wrapinner);
+			$wrapper->appendChild($address);
+			$wrapper->appendChild($map);
 		}
 
 		public function createTable()
