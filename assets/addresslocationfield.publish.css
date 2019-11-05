@@ -1,113 +1,57 @@
-div.field-addresslocation p {
-	color: #2f77eb;
-	margin: 0 0 1.5rem;
-}
-
-div.field-addresslocation label {
-	box-sizing: border-box;
-	margin-top: 1rem;
-	padding-right: 1.5rem;
-	width: 50%;
-}
-
-.secondary.column div.field-addresslocation div.main-wrapper {
-	flex-direction: column;
-}
-
-.secondary.column div.field-addresslocation label {
-	padding-right: 3rem;
-}
-
-.secondary.column div.field-addresslocation div.map {
-	height: 200px;
-}
-
-@media (max-width: 1023px) {
-	div.field-addresslocation label {
-		width: 100%;
-	}
-
-	div.field-addresslocation div.main-wrapper {
-		flex-direction: column;
-	}
-
-	div.field-addresslocation div.map {
-		height: 200px;
-	}
-}
-
-div.field-addresslocation label.street {
-	width: 100%;
-}
-
-div.field-addresslocation label.latitude input,
-div.field-addresslocation label.longitude input {
-	color: #7F7F7F;
-}
-
-div.field-addresslocation label input {
-	clear: both;
-}
-
-div.field-addresslocation div.locate {
+.field.field-addresslocation {
 	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	justify-content: flex-start;
-	margin: 2em 0;
+}
+
+.field.field-addresslocation>* {
+	flex-basis: 50%;
+}
+
+.field.field-addresslocation>.address {
+	border-right: 1px solid var(--color-ui);
+	padding-top: var(--standard-inner-rhythm);
+}
+
+.field.field-addresslocation .address>input,
+.field.field-addresslocation .address>label {
+	width: 50%;
+	float: left;
+}
+
+.field.field-addresslocation .address>legend {
+	clear: both;
+	margin-bottom: var(--spacing-nano);
+}
+
+.field.field-addresslocation .address .street {
 	width: 100%;
+}
+
+.field.field-addresslocation .address>label {
+	width: calc(50% - var(--standard-inner-rhythm) * 2);
+}
+
+.field.field-addresslocation .address>div {
+	clear: both;
+	padding: var(--standard-inner-rhythm);
+}
+
+.field.field-addresslocation .address>div>input[type=button] {
+	margin-right: var(--standard-inner-rhythm);
+}
+
+.field.field-addresslocation .map {
+	margin: var(--standard-inner-rhythm);
+	flex-shrink: 1;
+	border-radius: var(--radius-small);
+}
+
+.field.field-addresslocation input[type="text"]:last-of-type {
+	border-radius: 0;
 }
 
 div.field-addresslocation div.locate a.mapswitch {
 	float: right;
 	text-decoration: none;
-}
-
-div.field-addresslocation div.locate input {
-	color: #fff;
-	font-size: 1.1rem;
-	text-transform: uppercase;
-	line-height: 1.6rem;
-	margin: 0 1rem 0 0;
-	padding: 1rem 1.5rem;
-	border-radius: 5px;
-	border: none;
-	background: #2f77eb;
-	width: auto;
-	cursor: pointer;
-}
-
-div.field-addresslocation div.locate input:not(:disabled):hover {
-	background: #121212;
-}
-
-div.field-addresslocation div.locate input:disabled {
-	opacity: 0.5;
-	pointer-events: none;
-}
-
-div.field-addresslocation div.main-wrapper {
-	border-radius: 5px;
-	margin: 0 0 3rem;
-	padding: 1.5rem;
-	border: 2px solid var(--color-main-lighter);
-	display: flex;
-	align-items: stretch;
-}
-
-div.field-addresslocation div.address {
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	justify-content: flex-start;
-	flex-wrap: wrap;
-	width: calc(100% + 3rem);
-}
-
-div.field-addresslocation div.map {
-	width: 100%;
-	border-radius: 5px;
-	overflow: hidden;
 }
 
 div.field-addresslocation div.gm-style-cc {
