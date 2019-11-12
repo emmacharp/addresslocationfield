@@ -178,8 +178,8 @@
 			}
 			if (Administration::instance()->Page) {
 				Administration::instance()->Page->addStylesheetToHead(URL . '/extensions/addresslocationfield/assets/addresslocationfield.publish.css', 'screen', 78);
-				Administration::instance()->Page->addScriptToHead('https://maps.google.com/maps/api/js?key=' . $key, 79);
-				Administration::instance()->Page->addScriptToHead(URL . '/extensions/addresslocationfield/assets/addresslocationfield.publish.js', 80);
+				Administration::instance()->Page->addScriptToBody('https://maps.google.com/maps/api/js?key=' . $key, 79);
+				Administration::instance()->Page->addScriptToBody(URL . '/extensions/addresslocationfield/assets/addresslocationfield.publish.js', 80);
 			}
 
 			// input values, from data or defaults
