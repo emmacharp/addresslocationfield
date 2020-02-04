@@ -6,9 +6,18 @@
 	flex-basis: 50%;
 }
 
+.field.field-addresslocation:focus-within {
+	background-color: var(--standard-field-background-color);
+}
+
 .field.field-addresslocation>.address {
 	border-right: 1px solid var(--color-ui);
 	padding-top: var(--standard-inner-rhythm);
+	--standard-field-hover-color: var(--standard-label-color);
+}
+
+.field.field-addresslocation .address>input {
+	border-bottom: 1px solid var(--standard-field-border-color);
 }
 
 .field.field-addresslocation .address>input,
